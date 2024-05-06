@@ -1,0 +1,141 @@
+/*Aqui é  a fonte do google*/
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}  
+body{
+    display: flex;
+    font-family: "Inter", sans-serif;
+}
+nav{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    background: #fff;
+    width: 150px;
+    overflow: hidden;
+    transition: width 0.2s liner;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+/* Remover marcadores de lista */
+ul {
+    list-style-type: none;
+}
+.logo{
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    margin: 10px 0 0 10px;
+}
+.logo img{
+    width: 70px;
+    height: 70px;
+   
+}
+a{
+    position: relative;
+    color: rgb(85, 83, 82);
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+.fas{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.nav{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+a:hover{
+    background: #fff;
+}
+
+.logout{
+    position: absolute;
+    bottom: 0;
+}
+main{
+    margin-left: 180px; /* Largura da barra de navegação */  
+    margin-top: 40px;
+    
+}
+
+.bloco{
+    display: flex;
+    display: table;
+    width: 200%;
+    height: 10%;
+    background-color:  #D6E88D;
+    border-radius: 10px 10px 10px 10px;
+    
+}
+.bloquinho{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: white;
+    width: 17%;
+    height: 70%;
+    border-radius: 10px 30px 30px 10px ;
+}
+.bloquinho p{
+    
+    margin-left: 26px;
+    margin-top: 2px;
+    color: #000000;
+    font-weight: bold;
+}
+.frase{
+    margin-bottom: 30px;
+    color: #000000;
+    font-weight: bold;
+}
+input{
+    margin-bottom: 30px;
+}
+    /* Modal Styling */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 5px;
+    }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
