@@ -8,34 +8,46 @@
     box-sizing: border-box;
 }  
 body{
+    
     display: flex;
     font-family: "Inter", sans-serif;
 }
 nav{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    height: 100%;
-    left: 0;
+    display: flex;
+    position: relative;
+    margin: 0;
+   
+    height: 100vh;
+  
     background: #fff;
-    width: 150px;
+    width: 10%;
     overflow: hidden;
     transition: width 0.2s liner;
     box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+
 }
 /* Remover marcadores de lista */
 ul {
+    
+    width: 100%;
     list-style-type: none;
+   
+}
+li{
+    
+    border: solid 1px #000000;
+    justify-content: center;
+    align-items: center;
 }
 .logo{
-    text-align: center;
-    display: flex;
-    transition: all 0.5s ease;
-    margin: 10px 0 0 10px;
+    width: 50px;
+    border: solid 1px #000000;
+    margin: 10px 10px 10px 10px;
 }
 .logo img{
-    width: 70px;
-    height: 70px;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
    
 }
 a{
@@ -54,11 +66,7 @@ a{
     font-size: 20px;
     text-align: center;
 }
-.nav{
-    position: relative;
-    top: 12px;
-    margin-left: 10px;
-}
+
 a:hover{
     background: #fff;
 }
@@ -68,16 +76,21 @@ a:hover{
     bottom: 0;
 }
 main{
-    margin-left: 180px; /* Largura da barra de navegação */  
-    margin-top: 40px;
+    margin-top: 3%;
+    width: 80%;
+    height: 100%;
+    margin-left: 5%;
+    /*margin-left: 180px; /* Largura da barra de navegação */  
+   /* margin-top: 40px;*/
     
 }
 
 .bloco{
+    /*border: solid 1px #000000;*/
     display: flex;
-    display: table;
-    width: 200%;
-    height: 10%;
+    flex-direction: row;
+    width: 40%;
+    height: 70px;
     background-color:  #D6E88D;
     border-radius: 10px 10px 10px 10px;
     
@@ -96,7 +109,13 @@ main{
     margin-left: 26px;
     margin-top: 2px;
     color: #000000;
-    font-weight: bold;
+    
+}
+.nome{
+    align-self: center;
+    margin-left: 5%;
+    align-items: center;
+    justify-content: center;
 }
 .frase{
     margin-bottom: 30px;
@@ -139,3 +158,16 @@ input{
         text-decoration: none;
         cursor: pointer;
     }
+    #icon{
+        font-size: 26px;
+    }
+    #openModalBtn{
+        font-size: 26px;
+    }
+    .pesquisa{
+        width: 25%;
+        height: 35px;
+        border: solid 2px #000000;
+        border-radius: 10px 10px 10px 10px;
+    }
+   

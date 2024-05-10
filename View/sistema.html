@@ -28,28 +28,28 @@
 
             <li>
                 <a href="#">
-                <i class="bi bi-house-door"></i>
-                <span class="nav-item">Home</span>
+                <i class="bi bi-house-door" id="icon"></i>
+                <span class="nav-item"></span>
             </a></li>
 
             <li>
                 <a href="#">
                     <i id="openModalBtn" class="bi bi-pencil-square"></i>
-                    <span class="nav-item">Formulário</span>  
+                    <span class="nav-item"></span>  
                 </a>
             </li>
 
             <li>
                 <a href="#">
-                    <i class="bi bi-gear"></i>
-                    <span class="nav-item">Settings</span>
+                    <i class="bi bi-gear" id="icon"></i>
+                    <span class="nav-item"></span>
                 </a>
             </li>
 
             <li>
                 <a href="#" class="logout">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span class="nav-item">Log out</span>
+                    <i class="bi bi-box-arrow-in-right" id="icon"></i>
+                    <span class="nav-item"></span>
                 </a>
             </li>
 
@@ -61,7 +61,7 @@
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <h2>Cadastro do Paciente</h2>
+        <h3>Cadastro</h3>
         <form>
             <label for="cpf">CPF:</label>
             <input type="text" id="cpf" name="cpf" required><br><br>
@@ -72,8 +72,49 @@
                 <input type="text" id="nome" name="nome"><br><br>
                 <label for="telefone">Telefone:</label>
                 <input type="text" id="telefone" name="telefone"><br><br>
+                <label for="telefone">E-mail:</label>
+                <input type="text" id="email" name="email"><br><br>
+                <label for="telefone">Convenio:</label>
+                <input type="text" id="convenio" name="convenio"><br><br>
+                <label for="telefone">Data de nascimento:</label>
+                <input type="date" id="data" name="data"><br><br>
             </div>
             
+            <h3>Anamnese</h3>
+
+             <!-- Perguntas abertas -->
+           <label for="pergunta3">Queixa principal e história da doença atual: </label><br>
+           <textarea id="pergunta3" name="pergunta3" rows="4" cols="50"></textarea><br><br>
+           
+           <label for="pergunta4">Uso de medicação: </label><br>
+           <textarea id="pergunta4" name="pergunta4" rows="4" cols="50"></textarea><br><br>
+
+           <label for="pergunta4">Alergia: </label><br>
+           <textarea id="pergunta4" name="pergunta4" rows="4" cols="50"></textarea><br><br>
+
+           <label for="pergunta1">Quando se fere seu sangramento é: </label><br><br>
+           <input type="radio" id="pergunta1_opcao1" name="pergunta1" value="opcao1">
+           <label for="pergunta1_opcao1">Normal</label><br>
+           <input type="radio" id="pergunta1_opcao2" name="pergunta1" value="opcao2">
+           <label for="pergunta1_opcao2">Excessivo</label><br>
+
+           <label for="pergunta1">Cicatrização: </label><br><br>
+           <input type="radio" id="pergunta1_opcao1" name="pergunta1" value="opcao1">
+           <label for="pergunta1_opcao1">Normal</label><br>
+           <input type="radio" id="pergunta1_opcao2" name="pergunta1" value="opcao2">
+           <label for="pergunta1_opcao2">Complicada</label><br>
+
+           <label for="pergunta2">Sente falta de ar?</label><br><br>
+           <input type="radio" id="pergunta2_opcao1" name="pergunta2" value="opcao1">
+           <label for="pergunta2_opcao1">Não</label><br>
+           <input type="radio" id="pergunta2_opcao2" name="pergunta2" value="opcao2">
+           <label for="pergunta2_opcao2">Raramente</label><br>
+           <input type="radio" id="pergunta2_opcao3" name="pergunta2" value="opcao3">
+           <label for="pergunta2_opcao3">Frequentemente</label><br>
+           <input type="radio" id="pergunta2_opcao4" name="pergunta2" value="opcao4">
+           <label for="pergunta2_opcao4">Sempre</label><br><br>
+
+           <h3>Saúde bucal</h3>
            <!-- Perguntas de múltipla escolha -->
            <label for="pergunta1">Pergunta 1:</label><br>
            <input type="radio" id="pergunta1_opcao1" name="pergunta1" value="opcao1">
@@ -96,25 +137,12 @@
            <label for="pergunta2_opcao4">Opção 4</label><br><br>
 
             
-           <label for="pergunta2">Pergunta 3:</label><br>
-           <input type="radio" id="pergunta2_opcao1" name="pergunta2" value="opcao1">
-           <label for="pergunta2_opcao1">Opção 1</label><br>
-           <input type="radio" id="pergunta2_opcao2" name="pergunta2" value="opcao2">
-           <label for="pergunta2_opcao2">Opção 2</label><br>
-           <input type="radio" id="pergunta2_opcao3" name="pergunta2" value="opcao3">
-           <label for="pergunta2_opcao3">Opção 3</label><br>
-           <input type="radio" id="pergunta2_opcao4" name="pergunta2" value="opcao4">
-           <label for="pergunta2_opcao4">Opção 4</label><br><br>
-           
-           <!-- Perguntas abertas -->
-           <label for="pergunta3">Pergunta 4 (Dissertativa):</label><br>
-           <textarea id="pergunta3" name="pergunta3" rows="4" cols="50"></textarea><br><br>
-           
-           <label for="pergunta4">Pergunta 5 (Dissertativa):</label><br>
-           <textarea id="pergunta4" name="pergunta4" rows="4" cols="50"></textarea><br><br>
 
-           <label for="pergunta4">Pergunta 6 (Dissertativa):</label><br>
-           <textarea id="pergunta4" name="pergunta4" rows="4" cols="50"></textarea><br><br>
+
+           <h3>Tratamento</h3>
+
+           <label for=""></label><br>
+           <textarea id="tratamento" name="tratamento" rows="4" cols="50"></textarea><br><br>
             
             <input type="submit" value="Enviar">
         </form>
@@ -125,15 +153,17 @@
     <div class="frase">
         <h3>Welcome ProntClinic</h3>
     </div>
-    <input type="text" placeholder="Name or CPF">
+   
+    <input type="text" placeholder="Name or CPF" class="form-control pesquisa input-icon">
+      
 
     <div class="bloco">
         <div class="bloquinho">
             <p>Abril</p>
         </div>
-        <div>
+        <div class="nome">
             <h6>Lívia Almeida Marins</h6>
-            <h6></h6>
+            <h6>527.601.488.40</h6>
         </div>
     </div>
 </main>
