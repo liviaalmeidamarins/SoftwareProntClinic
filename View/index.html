@@ -3,17 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TelaCadastro / Cadastro e Login</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>ProntClinic</title>
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+
 <body>
+    <header>
+      <nav class = "nav-bar">
+        <div class="logo">
+          <img src="img/Logo.png" alt="logo">
+          <h1>ProntClinic</h1>
+        </div>
 
-    <img src="img/logo.png" alt="" class="logo">
+        <div class="nav-list">
+          <ul>
+            <li class="nav-item"><a href="#inicio" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#Servicos" class="nav-link">Serviços</a></li>
+            <li class="nav-item"><a href="#QuemSomos" class="nav-link">Quem Somos</a></li>
+            <li class="nav-item"><a href="#Precos" class="nav-link">Preços</a></li>
+            <li class="nav-item"><a href="#Contato" class="nav-link">Contato</a></li>
+          </ul>
+        </div>
+
+      <div class="login-button">
+          <button class="verde"><a href="#">Entrar</a></button>
+          <button class="branco"><a href="#">Cadastrar-se</a></button>
+        </div>
+      </nav>
+    </header>
+
     
+    <div class="inicio" id="inicio">
+      <div class="box1">
+        <div class="imagem">
+            <img src="img/Prototipo.png">
+        </div>
+    </div>
 
-    <script src="js/bootstrap.min.js"></script>
-   
+    <div class="box2">
+        <div class="texto">
+          <h1>Mais Organização e Eficiência em seus Prontuários Odontológicos</h1>
+          <button class="botao"><a href="#">Teste Por 30 Dias Gratuitamente</a></button>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="container" id="Servicos">
+      <div class="box"><i class="bi bi-clipboard2-fill" style="font-size: 40px;"></i><span>Prontuário Eletrônico</span></div>
+      <div class="box"><i class="bi bi-lock-fill" style="font-size: 40px;"></i><span>Segurança de Dados</span></div>
+      <div class="box"><i class="bi bi-arrow-repeat" style="font-size: 40px;"></i><span>Atualizações Automáticas</span></div>
+      <div class="box"><i class="bi bi-pen-fill" style="font-size: 40px;"></i><span>Assinatura Eletrônica</span></div>
+  </div>
+
+
+  <div class="container-missao" id="QuemSomos">
+    <div class="box-missao" style="background-color: #D6E88D;"><i class="bi bi-rocket-takeoff" style="font-size: 60px;"></i><span><em>Facilitar a gestão de prontuários, com serviços eletrônicos, promovendo eficiência e sustentabilidade.</em></span></div>
+    <div class="box-missao"><i class="bi bi-eye-fill" style="font-size: 60px;"></i><span><em>Ser referência no mercado, auxiliando clínicas em expansão a atingirem seu máximo potencial.</em></span></div>
+    <div class="box-missao" style="background-color: #D6E88D;"><i class="bi bi-signpost-fill" style="font-size: 60px;"></i></i><span><em>A sustentabilidade, integridade e privacidade dos dados dos pacientes são os princípios fundamentais.</em></span></div>
+  </div>
+
+    
+  <div class="container-preco" id="Precos">
+    <div class="box-preco" style="border-right: 3px solid #D6E88D; border-radius: 0px ;">
+      <div class="cor-fundo">
+      <span id="cor-fundo">Aproveite Nossos Planos</span></div>
+    </div>
+    <div class="box-preco" style="border: 1px solid #ccc;"><span>Mensal</span><i class="bi bi-credit-card" style="font-size: 60px;"></i><span>R$39,99</span>
+      <button class="botao-mensal"><a href="#">Assinar</a></button>
+    </div>
+    <div class="box-preco" style="border: 1px solid #ccc;"><span>Anual</span><i class="bi bi-credit-card" style="font-size: 60px;"></i><span>R$469,99</span>
+      <button class="botao-anual"><a href="#">Assinar</a></button>
+    </div>
+  </div>
+
+<h1 style="font-weight: bolder; text-align: center;">Entre em contato Conosco</h1>
+ 
+<div class="formulario" id="Contato">
+  <div class="fundo">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nome</label>
+        <input type="email" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="nome" style="background-color: #ccc;">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="email" style="background-color: #ccc;">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Comentário</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Digite sua mensagem" style="background-color: #ccc;"></textarea>
+      </div>
+      <div class="text-center">
+        <div id="success"></div>
+        <button class="enviar" id="sendMessageButton" type="submit">Enviar Mensagem</button>
+    </div>
+  </div>
+</div>
+
+<footer class="rodape" id="contato">
+  <i class="bi bi-whatsapp" style="font-size: 20px; margin: 2px; text-align: center;"></i>
+    <i class="bi bi-instagram" style="font-size: 20px; margin: 2px; text-align: center;" ></i>
+    <i class="bi bi-facebook" style="font-size: 20px; margin: 2px; text-align: center;"></i>
+  <div class="rodape-div">
+      <div class="rodape-div-1">
+          <div class="rodape-div-1-coluna">
+              <span><b>PRONTCLINIC</b></span>
+              <p>SIA Trecho 8 lote 000 bloco z sala 900 - Guarátinguetá, Brasília - DF, 70000-010</p>
+          </div>
+      </div>
+
+      <div class="rodape-div-2">
+          <div class="rodape-div-2-coluna">
+              <span><b>Contatos</b></span>
+              <p>prontclinic@gmail.com</p>
+              <p>+55 12 xxxx-xxxx</p>
+          </div>
+      </div>
+
+      <div class="rodape-div-3">
+          <div class="rodape-div-3-coluna">
+              <span><b>Links</b></span>
+              <p><a href="#inicio">Home</a></p>
+              <p><a href="#Servicos">Servicos</a></p>
+              <p><a href="#QuemSomos">Quem Somos</a></p>
+              <p><a href="#Precos">Preços</a></p>
+              <p><a href="#Contato">Contato</a></p>
+          </div>
+      </div>
+
+      <div class="rodape-div-4">
+          <div class="rodape-div-4-coluna">
+              <span><b>Outros</b></span>
+              <p>Políticas de Privacidade</p>
+          </div>
+      </div>
+
+  </div>
+  <p class="rodape-direitos">Copyright © 2024 – Todos os Direitos Reservados.</p>
+</footer>
+
+<script src="js/bootstrap.min.js"></script>
 </body>
+
 </html>

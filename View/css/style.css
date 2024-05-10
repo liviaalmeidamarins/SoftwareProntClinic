@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans serif;
+}
+
+header{
+    background-color: white;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 02rem;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+}
+
+body::before {
+    content: "";
+    display: block;
+    height: 130px; 
+}
+
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 90px; 
+    height: auto;
+}
+
+.logo h1{
+    color: #D6E88D;
+    font-size: 20px;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    font-weight: bolder;
+}
+
+.nav-item{
+    margin: 0 15px;
+}
+
+.nav-link{
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: black;
+    font-size: 400;
+}
+
+.verde {
+    background-color: #D6E88D;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.branco{
+    background-color: white; 
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 20px;
+}
+
+.login-button button:hover {
+    opacity: 0.7;
+}
+
+
+.login-button button a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.inicio{
+    width: 100%;
+    height: 500px;
+    background-color:#D6E88D;
+    float: left;
+    display: flex;
+}
+
+/*.inicio::before {
+    content: "";
+    position: absolute;
+    bottom: 315px;
+    left: 0;
+    width: 100%; 
+    height: 40px; 
+    background: white; 
+    border-radius: 95% 95% 20% 20%;
+}*/
+
+.box1{
+    width: 45%;
+    height: 89%;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box1 .imagem img{
+    max-width: 100%;
+    max-width: 100%;
+}
+
+.box2{
+    width: 55%;
+    height: 89%;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto{
+    font-size: 30;
+    color: white;
+    margin-bottom: 5%;
+    font-weight: bolder;
+    text-align: center;
+    height: 55%;
+}
+
+.teste{
+    width: 90%;
+    height: 90%;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao{
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin: 10%;
+    padding: 0.8rem 8rem;
+    align-items: center;
+}
+
+.botao:hover {
+    opacity: 0.6;
+}
+
+.botao a{
+    text-decoration: none;
+    color: #D6E88D;
+    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin: 5%;
+}
+
+.box {
+    width: 245px;
+    height: 245px;
+    background-color: white;
+    margin: 10px;
+    display: flex;
+    justify-content: auto;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    position: relative;
+    border-top: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc; 
+}
+
+.box i {
+    font-size: 40px;
+    
+}
+
+.box span {
+    margin-top: 90px; 
+    font-size: 25px;
+    text-align: center;
+}
+
+.container-missao {
+    display: flex;
+    justify-content: space-around;
+    height: 300px;
+    margin-bottom: 8%;
+    height: 50%;
+}
+
+.box-missao {
+    width: 34%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    position: relative;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.box-missao span {
+    text-align: center;
+    font-size: 22px;
+    margin: 1%;
+}
+
+.container-preco {
+    display: flex;
+    justify-content: space-around;
+    height: 650px;
+    padding-top: 0%;
+    padding-bottom: 5%;
+}
+
+.box-preco {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    border-radius: 20px;
+    padding-bottom: 5%;
+}
+
+.cor-fundo{
+    background-color: #D6E88D;
+    border-radius: 20px;
+    height: 20%;
+    width: 73%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+
+.box-preco span {
+    text-align: center;
+    font-size: 22px;
+    margin: 1%;
+    font-weight: bolder;
+    padding-top: 25%;
+    padding-bottom: 22%;
+    align-items: center;
+}
+
+.botao-mensal{
+    background-color: #D6E88D;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+
+.botao-anual{
+    background-color: #D6E88D;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.container-preco button a{
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    font-size: 1.1rem;
+
+}
+
+.container-preco button:hover {
+    opacity: 0.7;
+    
+}
+
+.formulario{
+    width: 100%;
+    height: 455px;
+    background-color:#D6E88D;
+    margin-top: 0%;
+    padding: 2%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.fundo{
+    align-items: center;
+    font-weight: bolder;
+    text-align: left;
+    align-content: center;
+    background-color: white;
+    width: 100%;
+}
+
+.mb-3{
+    font-weight: bolder;
+    padding: 0rem 02rem;
+    align-items: center;
+    margin: 1%;
+}
+
+.enviar {
+    background-color: #D6E88D;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin: 1%;
+    font-weight: bolder;
+}
+
+.enviar:hover {
+    opacity: 0.7;
+    
+}
+
+.final{
+    margin: 0%;
+    text-align: center;
+}
+
+.rodape{
+    background-color: gainsboro;
+    color: black;
+    height: auto;
+    width: 100%;
+    font-size: 14px;
+}
+.rodape a{
+    text-decoration: none;
+    color: black;
+}
+
+.rodape-direitos{
+    color: white;
+}
+
+.rodape-div{
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    margin: auto;
+    align-items: stretch;
+    padding: 60px 10px 40px 10px;
+}
+.rodape-div-1, .rodape-div-2, .rodape-div-3, .rodape-div-4{
+    display: flex;
+    width: calc(100% / 4 - 20px);
+    padding: 10px;
+}
+.rodape span{
+    font-size: 20px;
+    color: black;
+}
+.rodape-direitos{
+    width: 100%;
+    background-color: black;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+}
