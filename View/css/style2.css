@@ -12,42 +12,38 @@ body{
     display: flex;
     font-family: "Inter", sans-serif;
 }
-nav{
+nav {
     display: flex;
     position: relative;
     margin: 0;
-   
     height: 100vh;
-  
     background: #fff;
     width: 10%;
     overflow: hidden;
-    transition: width 0.2s liner;
+    transition: width 0.2s linear;
     box-shadow: 0 20px 35px rgba(0,0,0,0.1);
-
 }
+
 /* Remover marcadores de lista */
 ul {
-    
+    display: flex;
+    flex-direction: column; /* Definir a direção da lista como coluna para itens empilhados verticalmente */
     width: 100%;
     list-style-type: none;
-   
+    padding: 0; /* Remover o preenchimento padrão */
 }
-li{
+
+li {
     
-    border: solid 1px #000000;
-    justify-content: center;
-    align-items: center;
+    /*border: solid 1px #000000;*/
+    display: flex; /* Adicionar para permitir que o conteúdo seja centrado vertical e horizontalmente */
 }
-.logo{
-    width: 50px;
-    border: solid 1px #000000;
-    margin: 10px 10px 10px 10px;
-}
-.logo img{
+
+
+.aa img{
     justify-content: center;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
    
 }
 a{
@@ -69,11 +65,6 @@ a{
 
 a:hover{
     background: #fff;
-}
-
-.logout{
-    position: absolute;
-    bottom: 0;
 }
 main{
     margin-top: 3%;
@@ -160,6 +151,13 @@ input{
     }
     #icon{
         font-size: 26px;
+
+
+    }
+    .aa{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     #openModalBtn{
         font-size: 26px;
