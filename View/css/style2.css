@@ -168,4 +168,35 @@ input{
         border: solid 2px #000000;
         border-radius: 10px 10px 10px 10px;
     }
+
+    /*Estilização dos inputes e lebels da modal configuração*/
+    
+    #titulo-modal3{
+       margin:0 auto
+    }
+    .formataçao-modal3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid rgb(240, 238, 237);
+    }
+    
+
+    #input-modal3{
+        padding: 5px;
+        border: 2px solid rgb(153, 148, 146);
+        border-radius: 4px;
+    }
+
+    .enviar-modal3{
+        width: 68px;
+        height: 30px;
+        padding: 3px;
+        border-radius: 5px;
+        background-color: #D6E88D;
+        display: flex;
+        flex-direction: row;
+    }
+    
    

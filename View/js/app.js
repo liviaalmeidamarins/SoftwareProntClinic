@@ -15,4 +15,14 @@ document.getElementById('cpf').addEventListener('change', function(){
     } else {
         document.getElementById('notRegistered').style.display = 'none';
     }
+}); 
+
+// modal configurações
+document.getElementById('modal3').addEventListener('click', function(){
+    document.getElementById('minhamodal3').style.display = 'block';
+});
+
+// Fecha a modal ao clicar no botão fechar
+document.getElementsByClassName('close')[1].addEventListener('click', function(){
+    document.getElementById('minhamodal3').style.display = 'none';
 });
