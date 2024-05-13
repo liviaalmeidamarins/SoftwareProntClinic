@@ -42,8 +42,8 @@ li {
 
 .aa img{
     justify-content: center;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: auto;
    
 }
 a{
@@ -103,6 +103,7 @@ main{
     
 }
 .nome{
+    color: white;
     align-self: center;
     margin-left: 5%;
     align-items: center;
@@ -198,5 +199,15 @@ input{
         display: flex;
         flex-direction: row;
     }
+    /*Botão enviar*/
+    .botao-Enviar{
+        background-color: #D6E88D;
+        padding: 10px 15px;
+        border-radius: 20px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+    
     
    
