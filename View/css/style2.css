@@ -150,11 +150,12 @@ input{
         text-decoration: none;
         cursor: pointer;
     }
-    #icon{
+
+    .icon{
         font-size: 26px;
-
-
+        cursor: pointer;
     }
+
     .aa{
         display: flex;
         justify-content: center;
@@ -170,12 +171,39 @@ input{
         border-radius: 10px 10px 10px 10px;
     }
 
+    /*A estilização da modal 1*/
+    .input-modal1{
+
+        border: 2px solid rgb(153, 148, 146);
+        border-radius: 4px;
+    }
+
+    .formatacao-radio{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .formatacao-radio input[type="radio"]{
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+
+    .formatacao-radio label{
+        display: flex;
+        margin-right: 10px;
+        align-items: center;
+    }
+
+
+    /*Aqui termina a estilização da modal 1*/
+
     /*Estilização dos inputes e lebels da modal configuração*/
     
     #titulo-modal3{
        margin:0 auto
     }
-    .formataçao-modal3{
+    .formataçao-modal{
         display: flex;
         justify-content: center;
         align-items: center;

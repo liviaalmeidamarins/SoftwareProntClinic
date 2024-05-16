@@ -26,3 +26,11 @@ document.getElementById('modal3').addEventListener('click', function(){
 document.getElementsByClassName('close')[1].addEventListener('click', function(){
     document.getElementById('minhamodal3').style.display = 'none';
 });
+
+
+
+
+
+
+
+

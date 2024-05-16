@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -26,22 +26,22 @@
             </li>
     
             <li>
-                <a href="#" class="aa">
-                    <i class="bi bi-house-door" id="icon"></i>
+                <a href="#" class="aa icon">
+                    <i class="bi bi-house-door" ></i>
                     <span class="nav-item"></span>
                 </a>
             </li>
     
             <li>
-                <a href="#" class="aa">
-                    <i id="openModalBtn" class="bi bi-pencil-square"></i>
+                <a href="#" class="aa icon" id="openModalBtn" >
+                    <i class="bi bi-pencil-square" ></i>
                     <span class="nav-item"></span>  
                 </a>
             </li>
     
             <li>
-                <a href="#" class="aa" id="modal3">
-                    <i  class="bi bi-gear" id="icon"></i>
+                <a href="#" class="aa icon" id="modal3">
+                    <i class="bi bi-gear"  ></i>
                     <span class="nav-item"></span>
                 </a>
             </li>
@@ -55,10 +55,22 @@
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <h3>Cadastro</h3>
-        <form>
-            <label for="cpf">CPF:</label>
-            <input type="text" id="cpf" name="cpf" required><br><br>
+        
+        <form action="" method="POST">
+           
+        <div class="formataçao-modal">
+            <br>
+                 <h3><strong>Cadastro</strong></h3>
+                 <br>
+                   <label for="nome">Nome</label>
+            <input type="text" class="input-modal1" id="nome_modal_prontuario" name="nome_modal_prontuario" required>
+                <label for="cpf">CPF</label>
+            <input type="text" class="input-modal1" id="cpf_modal_prontuario" name="cpf_modal_prontuario" required>
+                <label for="telefone">Telefone</label>
+            <input type="text" class="input-modal1" id="telefone_modal_prontuario" name="telefone_modal_prontuario" required>
+                <label for="Email">E-mail</label>
+            <input type="text" class="input-modal1" id="email_modal_prontuario" name="email_modal_prontuario" required>
+              
             
             <!-- Se o paciente não estiver cadastrado -->
             <div id="notRegistered" style="display: none;">
@@ -71,74 +83,149 @@
                 <label for="telefone">Convenio:</label>
                 <input type="text" id="convenio" name="convenio"><br><br>
                 <label for="telefone">Data de nascimento:</label>
-                <input type="date" id="data" name="data"><br><br>
+                <input type="date" id="data" name="data"><br>
             </div>
             
-            <h3>Anamnese</h3>
-
-             <!-- Perguntas abertas -->
-           <label for="pergunta3">Queixa principal e história da doença atual: </label><br>
-           <textarea id="pergunta3" name="pergunta3" rows="4" cols="50"></textarea><br><br>
-           
-           <label for="pergunta4">Uso de medicação: </label><br>
-           <textarea id="pergunta4" name="pergunta4" rows="4" cols="50"></textarea><br><br>
-
-           <label for="pergunta4">Alergia: </label><br>
-           <textarea id="pergunta4" name="pergunta4" rows="4" cols="50"></textarea><br><br>
-
-           <label for="pergunta1">Quando se fere seu sangramento é: </label><br><br>
-           <input type="radio" id="pergunta1_opcao1" name="pergunta1" value="opcao1">
-           <label for="pergunta1_opcao1">Normal</label><br>
-           <input type="radio" id="pergunta1_opcao2" name="pergunta1" value="opcao2">
-           <label for="pergunta1_opcao2">Excessivo</label><br>
-
-           <label for="pergunta1">Cicatrização: </label><br><br>
-           <input type="radio" id="pergunta1_opcao1" name="pergunta1" value="opcao1">
-           <label for="pergunta1_opcao1">Normal</label><br>
-           <input type="radio" id="pergunta1_opcao2" name="pergunta1" value="opcao2">
-           <label for="pergunta1_opcao2">Complicada</label><br>
-
-           <label for="pergunta2">Sente falta de ar?</label><br><br>
-           <input type="radio" id="pergunta2_opcao1" name="pergunta2" value="opcao1">
-           <label for="pergunta2_opcao1">Não</label><br>
-           <input type="radio" id="pergunta2_opcao2" name="pergunta2" value="opcao2">
-           <label for="pergunta2_opcao2">Raramente</label><br>
-           <input type="radio" id="pergunta2_opcao3" name="pergunta2" value="opcao3">
-           <label for="pergunta2_opcao3">Frequentemente</label><br>
-           <input type="radio" id="pergunta2_opcao4" name="pergunta2" value="opcao4">
-           <label for="pergunta2_opcao4">Sempre</label><br><br>
-
-           <h3>Saúde bucal</h3>
-           <!-- Perguntas de múltipla escolha -->
-           <label for="pergunta1">Pergunta 1:</label><br>
-           <input type="radio" id="pergunta1_opcao1" name="pergunta1" value="opcao1">
-           <label for="pergunta1_opcao1">Opção 1</label><br>
-           <input type="radio" id="pergunta1_opcao2" name="pergunta1" value="opcao2">
-           <label for="pergunta1_opcao2">Opção 2</label><br>
-           <input type="radio" id="pergunta1_opcao3" name="pergunta1" value="opcao3">
-           <label for="pergunta1_opcao3">Opção 3</label><br>
-           <input type="radio" id="pergunta1_opcao4" name="pergunta1" value="opcao4">
-           <label for="pergunta1_opcao4">Opção 4</label><br><br>
-           
-           <label for="pergunta2">Pergunta 2:</label><br>
-           <input type="radio" id="pergunta2_opcao1" name="pergunta2" value="opcao1">
-           <label for="pergunta2_opcao1">Opção 1</label><br>
-           <input type="radio" id="pergunta2_opcao2" name="pergunta2" value="opcao2">
-           <label for="pergunta2_opcao2">Opção 2</label><br>
-           <input type="radio" id="pergunta2_opcao3" name="pergunta2" value="opcao3">
-           <label for="pergunta2_opcao3">Opção 3</label><br>
-           <input type="radio" id="pergunta2_opcao4" name="pergunta2" value="opcao4">
-           <label for="pergunta2_opcao4">Opção 4</label><br><br>
-
+            <h3><strong>Anamnese</strong></h3>
             
+             <!-- Perguntas abertas -->
+           <label for="pergunta3"><b>Queixa principal e história da doença atual</b> </label>
+           <textarea class="input-modal1" id="pergunta3" name="pergunta3" rows="4" cols="50" placeholder="Escreva aqui sua anotações"></textarea><br>
 
+           <label for="pergunta4"><b>Faz uso de medicação? </b></label>
+           <textarea class="input-modal1" id="pergunta4" name="pergunta4" rows="4" cols="50" placeholder="Escreva aqui sua anotações"></textarea><br>
 
-           <h3>Tratamento</h3>
+           <label for="pergunta4"><b>Possue alguma alergia?</b> </label>
+           <textarea class="input-modal1" id="pergunta4" name="pergunta4" rows="4" cols="50" placeholder="Escreva aqui sua anotações"></textarea><br>
+    
+            <!--Perguntas de alternativas-->
+            <label for="pergunta1"><b>Quando se fere seu sangramento é:</b> </label>
+            <div class="formatacao-radio">
+                 <input type="radio" id="pergunta1_opcao1" name="pergunta1" value="opcao1">
+                 <label for="pergunta1_opcao1">Normal</label><br>
+                 <input type="radio" id="pergunta1_opcao2" name="pergunta1" value="opcao2">
+                 <label for="pergunta1_opcao2">Excessivo</label><br>
+            </div>
+            <label for="pergunta2"><b>Como é a sua cicatrização:</b> </label>
+            <div class="formatacao-radio">
+                 <input type="radio" id="pergunta2_opcao2" name="pergunta2" value="opcao1">
+                 <label for="pergunta2_opcao1">Normal</label><br>
+                 <input type="radio" id="pergunta2_opcao2" name="pergunta2" value="opcao2">
+           <label for="pergunta1_opcao2">Complicada</label><br>
+            </div>
+           <label for="pergunta3"><b>Sente falta de ar?</b></label>
+           <div class="formatacao-radio">
+             <input type="radio" id="pergunta3_opcao1" name="pergunta3" value="opcao1">
+                 <label for="pergunta3_opcao1">Não</label><br>
+                 <input type="radio" id="pergunta3_opcao2" name="pergunta3" value="opcao2">
+                 <label for="pergunta3_opcao2">Raramente</label><br>
+                 <input type="radio" id="pergunta3_opcao3" name="pergunta3" value="opcao3">
+                 <label for="pergunta3_opcao3">Frequentemente</label><br>
+                 <input type="radio" id="pergunta3_opcao4" name="pergunta3" value="opcao4">
+                 <label for="pergunta3_opcao4">Sempre</label><br>
+           </div>
+           <br>
+           <h3><strong>Saúde bucal</strong></h3><br>
+           <!-- Perguntas de múltipla escolha -->
+           <label for="pergunta4"><b>Teve reação com anestesia dental?</b></label>
+           <div class="formatacao-radio">
+                 <input type="radio" id="pergunta4_opcao1" name="pergunta4" value="opcao1">
+                 <label for="pergunta4_opcao1">Sim</label><br>
+                 <input type="radio" id="pergunta4_opcao2" name="pergunta4" value="opcao2">
+                 <label for="pergunta4_opcao2">Não</label><br>
+           </div>
+           <label for="pergunta5"><b>Sente dor nos dentes?</b></label>
+           <div class="formatacao-radio">
+                 <input type="radio" id="pergunta5_opcao1" name="pergunta5" value="opcao1">
+                 <label for="pergunta5_opcao1">Sim</label><br>
+                 <input type="radio" id="pergunta5_opcao2" name="pergunta5" value="opcao2">
+                 <label for="pergunta5_opcao2">Não</label><br>
+           </div>
+           <label for="pergunta6"><b>Sente dor na gengiva?</b></label>
+           <div class="formatacao-radio">
+                 <input type="radio" id="pergunta6_opcao1" name="pergunta6" value="opcao1">
+                 <label for="pergunta6_opcao1">Sim</label><br>
+                 <input type="radio" id="pergunta6_opcao2" name="pergunta6" value="opcao2">
+                 <label for="pergunta6_opcao2">Não</label><br>
+           </div>
+           <label for="pergunta7"><b>Teve sangramento na gengiva?</b></label>
+           <div class="formatacao-radio">
+                 <input type="radio" id="pergunta7_opcao1" name="pergunta7" value="opcao1">
+                 <label for="pergunta7_opcao1">Sim</label><br>
+                 <input type="radio" id="pergunta7_opcao2" name="pergunta7" value="opcao2">
+                 <label for="pergunta7_opcao2">Não</label><br>
+           </div>
+           <label for="pergunta8"><b>Sente gosto ruim na boca?</b></label>
+           <div class="formatacao-radio">
+                 <input type="radio" id="pergunta8_opcao1" name="pergunta8" value="opcao1">
+                 <label for="pergunta8_opcao1">Sim</label><br>
+                 <input type="radio" id="pergunta8_opcao2" name="pergunta8" value="opcao2">
+                 <label for="pergunta8_opcao2">Não</label><br>
+           </div>
+           <label for="pergunta9"><b>Boca seca?</b></label>
+           <div class="formatacao-radio">
+                 <input type="radio" id="pergunta9_opcao1" name="pergunta9" value="opcao1">
+                 <label for="pergunta9_opcao1">Sim</label><br>
+                 <input type="radio" id="pergunta9_opcao2" name="pergunta9" value="opcao2">
+                 <label for="pergunta9_opcao2">Não</label><br>
+           </div>
+           <label for="pergunta10"><b>Costuma ranger os dentes?</b></label>
+           <div class="formatacao-radio">
+                 <input type="radio" id="pergunta10_opcao1" name="pergunta10" value="opcao1">
+                 <label for="pergunta10_opcao1">Sim</label><br>
+                 <input type="radio" id="pergunta10_opcao2" name="pergunta10" value="opcao2">
+                 <label for="pergunta10_opcao2">Não</label><br>
+           </div>
+           <label for="pergunta11"><b>Sente dor no maxilar?</b></label>
+           <div class="formatacao-radio">
+                 <input type="radio" id="pergunta11_opcao1" name="pergunta11" value="opcao1">
+                 <label for="pergunta11_opcao1">Sim</label><br>
+                 <input type="radio" id="pergunta11_opcao2" name="pergunta11" value="opcao2">
+                 <label for="pergunta11_opcao2">Não</label><br>
+           </div>
+           <label for="pergunta12"><b>Sente dor no ouvido?</b></label>
+           <div class="formatacao-radio">
+                 <input type="radio" id="pergunta12_opcao1" name="pergunta12" value="opcao1">
+                 <label for="pergunta12_opcao1">Sim</label><br>
+                 <input type="radio" id="pergunta12_opcao2" name="pergunta12" value="opcao2">
+                 <label for="pergunta12_opcao2">Não</label><br>
+           </div>
+           <label for="pergunta13"><b>Quando foi o ultimo tratamento dentário?</b></label>
+           <div class="formatacao-radio">
+            <textarea class="input-modal1" id="pergunta13" name="pergunta13" rows="1" cols="50" placeholder="Escreva aqui a data"></textarea><br>
+           </div>
+           <label for="pergunta14"><b>É fumante?</b></label>
+           <div class="formatacao-radio">
+                 <input type="radio" id="pergunta14_opcao1" name="pergunta14" value="opcao1">
+                 <label for="pergunta14_opcao1">Sim</label><br>
+                 <input type="radio" id="pergunta1_opcao2" name="pergunta14" value="opcao2">
+                 <label for="pergunta14_opcao2">Não</label><br>
+           </div>
+           <label for="pergunta15"><b>Escova os dentes quantas vezes ao dia?</b></label>
+           <div class="formatacao-radio">
+                 <input type="radio" id="pergunta15_opcao1" name="pergunta15" value="opcao1">
+                 <label for="pergunta15_opcao1">Sim</label><br>
+                 <input type="radio" id="pergunta15_opcao2" name="pergunta15" value="opcao2">
+                 <label for="pergunta15_opcao2">Não</label><br>
+           </div>
+           <label for="pergunta16"><b>Utiliza o fio dental?</b></label>
+           <div class="formatacao-radio">
+                 <input type="radio" id="pergunta16_opcao1" name="pergunta16" value="opcao1">
+                 <label for="pergunta16_opcao1">Sim</label><br>
+                 <input type="radio" id="pergunta16_opcao2" name="pergunta16" value="opcao2">
+                 <label for="pergunta16_opcao2">Não</label><br>
+           </div>
 
-           <label for=""></label><br>
-           <textarea id="tratamento" name="tratamento" rows="4" cols="50"></textarea><br><br>
+            <br>
+
+           <h3><strong>Tratamento</strong></h3>
+
+           <label for=""></label>
+           <textarea class="input-modal1" id="tratamento" class="input-modal1" name="tratamento" rows="4" cols="50"></textarea><br>
             
            <button class="botao-Enviar" style="font-weight: bolder; color: white;">Enviar</button>
+           <br>
+        </div>
 
         </form>
     </div>
@@ -150,7 +237,7 @@
         <h3 id="titulo-modal3">Configurações</h3>
         <br>
         <form>
-            <div class="formataçao-modal3">
+            <div class="formataçao-modal">
                 <br>
              <label for="cpf">CPF/CNPJ</label>
              <input type="text" id="input-modal3" name="cpf" placeholder="CPF/CNPJ Cadastrado" required>
