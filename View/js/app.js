@@ -9,13 +9,7 @@ document.getElementsByClassName('close')[0].addEventListener('click', function()
 });
 
 // Verifica se o CPF foi digitado e mostra os campos de nome e telefone se necessário
-document.getElementById('cpf').addEventListener('change', function(){
-    if(this.value === '') {
-        document.getElementById('notRegistered').style.display = 'block';
-    } else {
-        document.getElementById('notRegistered').style.display = 'none';
-    }
-}); 
+
 
 // modal configurações
 document.getElementById('modal3').addEventListener('click', function(){
@@ -28,9 +22,20 @@ document.getElementsByClassName('close')[1].addEventListener('click', function()
 });
 
 
+// Etapas da modal 1
 
-
-
-
-
+function mostrarAsQuestoes() {
+    // Seleciona os campos dentro da modal
+    var campos = document.querySelectorAll(".etapa");
+    
+    // Itera sobre os campos para verificar se estão escondidos
+    campos.forEach(function(campo) {
+      // Se o campo está escondido, torna-o visível
+      if (campo.style.display === "none") {
+        campo.style.display = "block";
+      }
+    });
+  }
+  
+  
 

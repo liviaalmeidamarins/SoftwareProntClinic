@@ -172,6 +172,7 @@ input{
     }
 
     /*A estilização da modal 1*/
+
     .input-modal1{
 
         border: 2px solid rgb(153, 148, 146);
@@ -189,12 +190,39 @@ input{
         margin-right: 5px;
     }
 
+    #pergunta13_opcao1{
+        border: 2px solid rgb(153, 148, 146);
+    }
+
     .formatacao-radio label{
         display: flex;
         margin-right: 10px;
         align-items: center;
     }
+    .btn-formato{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn-etapa{
+        background-color: #D6E88D;
+        padding: 10px 15px;
+        border-radius: 20px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        margin-right: 5px;
+        color: white;
+    }
 
+    .inp-formato{
+        background-color: #D6E88D;
+        padding: 10px 15px;
+        border-radius: 20px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        margin-right: 5px;
+        color: white;
+    }
 
     /*Aqui termina a estilização da modal 1*/
 
