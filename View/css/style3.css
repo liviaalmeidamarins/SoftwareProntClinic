@@ -109,3 +109,13 @@ box-shadow: none;
     text-align:center;
     padding-top: 50px;
 }
+
+#message {
+    display: flex;
+    text-align: center;
+    margin-top: 5px;
+    text-align: center;
+    width: 100px;
+    color: red;
+   
+}

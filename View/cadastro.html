@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style3.css">
+        
 </head>
 <body>
     <div class="container col-11 col-md-9" id="form-container">
@@ -17,29 +18,29 @@
         <div class="row gx-5">
             <div class="col-md-6">
                 <h2>Realize seu cadastro</h2>
-                <form action="">
+                <form action="" method="" id="formCadastro">
                     <div class="form-floating md-3">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome">
+                    <input type="text" class="form-control" id="nomeCadastro" name="nomeCadastro"  placeholder="Digite seu nome">
                     <label for="name" class="form-label">Digite o seu nome</label>
                     </div>
 
                     <div class="form-floating md-3">
-                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Digite seu sobrenome">
+                    <input type="text" class="form-control" id="sobrenome" name="sobrenome"  placeholder="Digite seu sobrenome">
                     <label for="name" class="form-label">Digite o seu sobrenome</label>
                     </div>
 
                     <div class="form-floating md-3">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email">
+                    <input type="email" class="form-control" id="email" name="email"  placeholder="Digite seu email">
                     <label for="email" class="form-label">Digite o seu email</label>
                     </div>
 
                     <div class="form-floating md-3">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Digite seu email">
+                    <input type="password" class="form-control" id="senha" name="senha"  placeholder="Digite seu email">
                     <label for="password" class="form-label">Digite a sua senha</label>
                     </div>
 
                     <div class="form-floating md-3">
-                    <input type="password" class="form-control" id="confirmapassword" name="confirmapassword" placeholder="Digite seu email">
+                    <input type="password" class="form-control" id="confirmarSenhaCadastro" name="confirmarSenhaCadastro"  placeholder="Digite seu email">
                     <label for="confirme sua senha" class="form-label">Confime sua senha</label>
                     </div>
                     <div class="mb-3">
@@ -50,8 +51,10 @@
                         <div class="form-check mb-2">
                             <input type="checkbox" class="form-check-input" value="" id="newsletter" name="newsletter">
                             <label for="agree-form" class="form-check-label" >Você deseja recebers as nossas Newsletter?</label>
+                            <div id="message"></div>
                         </div>
-                        <input type="submit" class="btn btn-primary" value="cadastrar">
+                        <br>
+                        <input type="submit" class="btn btn-primary" id="submit" value="cadastrar">
                     </div>
 
                 </form>
@@ -69,6 +72,6 @@
         </div>
     </div>
 
-
+    <script src="js/app2.js"></script>
 </body>
 </html>
