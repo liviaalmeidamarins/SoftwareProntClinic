@@ -110,12 +110,14 @@ box-shadow: none;
     padding-top: 50px;
 }
 
+.mensagemErro{
+display: flex;
+margin-top: 4px;
+margin-left: 100px;
+text-align: center;
+}
+
 #message {
-    display: flex;
-    text-align: center;
-    margin-top: 5px;
-    text-align: center;
     width: 100px;
     color: red;
-   
 }

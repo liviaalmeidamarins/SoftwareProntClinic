@@ -8,8 +8,6 @@ document.getElementsByClassName('close')[0].addEventListener('click', function()
     document.getElementById('myModal').style.display = 'none';
 });
 
-// Verifica se o CPF foi digitado e mostra os campos de nome e telefone se necessário
-
 
 // modal configurações
 document.getElementById('modal3').addEventListener('click', function(){
