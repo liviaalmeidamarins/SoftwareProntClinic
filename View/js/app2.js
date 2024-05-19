@@ -3,7 +3,6 @@ document.getElementById('formCadastro').addEventListener('submit', function(even
     event.preventDefault(); // Impede o envio do formulário
 
     let nome = document.getElementById('nomeCadastro').value.trim();
-    let sobrenome = document.getElementById('sobrenome').value.trim();
     let email = document.getElementById('email').value.trim();
     let senha = document.getElementById('senha').value.trim();
     let confirmarSenha = document.getElementById('confirmarSenhaCadastro').value.trim();
@@ -13,7 +12,7 @@ document.getElementById('formCadastro').addEventListener('submit', function(even
     message.style.color = 'red';
 
     // Verifica se todos os campos estão preenchidos
-    if (!nome || !sobrenome || !email || !senha || !confirmarSenha) {
+    if (!nome || !email || !senha || !confirmarSenha) {
         message.textContent = 'Por favor, preencha todos os campos!';
         return;
     }
