@@ -86,5 +86,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+/*
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['email']) && isset($_POST['senha'])) {
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
 
+        if (Login($email, $senha)) {
+            echo 'success';
+        } else {
+            echo 'error';
+        }
+    } else {
+        echo 'error';
+    }
+} else {
+    header("HTTP/1.1 405 Method Not Allowed");
+    echo 'error';
+}
+*/
 ?>

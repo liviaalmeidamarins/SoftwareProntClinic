@@ -18,13 +18,13 @@
         <div class="row aling-itens-center gx-5">
             <div class="col-md-6 order-md-2">
                 <h2>Faça o login para continuar</h2>
-                <form>
+                <form method="post" id="loginForm" >
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu email">
+                        <input type="email" class="form-control" name="emailLogin" id="email" placeholder="Digite seu email">
                         <label for="email" class="form-label">Digite seu email</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" name="senha" id="password" placeholder="Digite sua senha">
+                        <input type="password" class="form-control" name="senhaLogin" id="password" placeholder="Digite sua senha">
                         <label for="password" class="form-label">Digite sua senha</label>
                         <span class="toggle-password" onclick="togglePasswordVisibility()">
                             <i class="fas fa-eye-slash"></i>
@@ -45,6 +45,6 @@
     </div>
 
 
-    <script src="js/app2.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
