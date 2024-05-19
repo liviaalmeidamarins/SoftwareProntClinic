@@ -36,3 +36,21 @@ document.getElementById('formCadastro').addEventListener('submit', function(even
 
 
 })
+
+// LOGIN JS
+function togglePasswordVisibility() {
+    const passwordField = document.getElementById('password');
+    const icon = document.querySelector('.toggle-password i');
+    const passwordFieldType = passwordField.getAttribute('type');
+    
+    if (passwordFieldType === 'password') {
+        passwordField.setAttribute('type', 'text');
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+    } else {
+        passwordField.setAttribute('type', 'password');
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+    }
+}
+

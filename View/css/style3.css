@@ -121,3 +121,13 @@ text-align: center;
     width: 100px;
     color: red;
 }
+
+/*Visibilidade da senha login*/
+.toggle-password {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 25px;
+    font-size: 25px;
+    color: #CCC;
+}
