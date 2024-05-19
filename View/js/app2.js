@@ -37,6 +37,7 @@ document.getElementById('formCadastro').addEventListener('submit', function(even
 
 })
 
+
 // LOGIN JS
 function togglePasswordVisibility() {
     const passwordField = document.getElementById('password');
@@ -45,12 +46,12 @@ function togglePasswordVisibility() {
     
     if (passwordFieldType === 'password') {
         passwordField.setAttribute('type', 'text');
-        icon.classList.remove('fa-eye');
-        icon.classList.add('fa-eye-slash');
-    } else {
-        passwordField.setAttribute('type', 'password');
         icon.classList.remove('fa-eye-slash');
         icon.classList.add('fa-eye');
+    } else {
+        passwordField.setAttribute('type', 'password');
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
     }
 }
 
