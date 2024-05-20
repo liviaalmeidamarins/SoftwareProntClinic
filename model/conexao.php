@@ -3,7 +3,7 @@
 function conectarBanco()
 {
     $host = '127.0.0.1';
-    $port = '3307';
+    $port = '3306';
     $dbname = 'prontclinic';
     $usuario = 'root';
     $senha = '';
@@ -12,6 +12,7 @@ function conectarBanco()
     {
         $conecta = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $usuario, $senha);
         $conecta->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "conectado com sucesso";
         return $conecta;
     } 
     catch (PDOException $e) 
@@ -21,4 +22,5 @@ function conectarBanco()
     }
 }
 
+conectarBanco();
 ?>

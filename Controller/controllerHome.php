@@ -78,12 +78,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senha = $_POST['senha'];
 
     // Verifica se o login foi bem-sucedido
-    if (login($email, $senha)) {
+     echo 'success';
+    /*if (login($email, $senha)) {
+       
         header("Location: ../View/sistema.html");
         exit();
     } else {
         echo 'error';
-    }
+    }*/    
 }
 
 /*
