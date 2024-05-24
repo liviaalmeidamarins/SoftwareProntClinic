@@ -1,110 +1,36 @@
 <?php
-require_once '../Model/modelHome.php';
+require_once '../model/modelHome.php';
 
-// Verifica se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'];  
-    $email = $_POST['email'];  
-    $senha = $_POST['senha'];
-    $senhaRepetida = $_POST['senhaRepetida'];
- 
-    
-    $nomeValido = false;
-    $emailValido = false;
-    $senhaValida = false;
-
-    // Validação do nome
-    if (!empty($nome) && strlen($nome) <= 255) 
-    {
-        $nomeValido = true;
-    } 
-    else 
-    {
-       
-    }
-
-    // Validação do email
-    if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        if (!ConferirEmailBancoDeDados($email)) {
-            $emailValido = true;
-        } else {
-            
-        }
-    } else {
-        
-    }
-
-    // Validação da senha
-    if ($senha !== null && $senha !== "") 
-    {
-        if ($senha == $senhaRepetida) 
-        {
-            if (strlen($senha) >= 8 && strlen($senha) <= 60 &&
-                preg_match('/[A-Z]/', $senha) && preg_match('/[a-z]/', $senha) && preg_match('/\d/', $senha)) 
-            {
-                $senhaValida = true; 
-            }
-            else 
-            {
-              
-            }
-        } 
-        else 
-        {
-           
-        }
-    }
-    else 
-    {
-       
-    }
-
-    if ($nomeValido && $emailValido && $senhaValida) 
-    {
-        CriarClinica($nome, $email, $senha);
-        header("Location: ../View/sistema.html");
-        exit();
-    }
-} 
-else 
-{
-
-}
-
-// Verifica se a requisição é do tipo POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtém os dados do formulário
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    // Verifica se o login foi bem-sucedido
-     echo 'success';
-    /*if (login($email, $senha)) {
-       
-        header("Location: ../View/sistema.html");
-        exit();
-    } else {
-        echo 'error';
-    }*/    
-}
+    // For debugging purposes, log the received values
+    error_log("Email: " . $email);
+    error_log("Senha: " . $senha);
 
-/*
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['email']) && isset($_POST['senha'])) {
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
+    $erros = [];
 
-        if (Login($email, $senha)) {
-            echo 'success';
-        } else {
-            echo 'error';
-        }
-    } else {
-        echo 'error';
+    // Validar email
+    if (empty($email)) {
+        $erros['email'] = "Email não pode ser vazio.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $erros['email'] = "Email inválido.";
     }
-} else {
-    header("HTTP/1.1 405 Method Not Allowed");
-    echo 'error';
+
+    // Validar senha
+    if (empty($senha)) {
+        $erros['senha'] = "Senha não pode ser vazia.";
+    }
+
+    if (empty($erros) && Login($email, $senha)) {
+        echo json_encode(["status" => "login_aceito"]);
+    } else {
+        if (empty($erros)) {
+            $erros['login'] = "Email ou senha incorretos.";
+        }
+        echo json_encode(["status" => "login_nao_aceito", "erros" => $erros]);
+    }
+    exit;
 }
-*/
 ?>

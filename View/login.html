@@ -3,35 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Login</title>
     <link rel="icon" href="img/logo-png.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="css/style3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style3.css">
 </head>
 <body>
     <div class="container col-11 col-md-9" id="form-container">
-            <div class="logo">
-              <img src="img/logo-nome.png" alt="logo">
-            </div>
-        <div class="row aling-itens-center gx-5">
+        <div class="logo">
+            <img src="img/logo-nome.png" alt="logo">
+        </div>
+        <div class="row align-items-center gx-5">
             <div class="col-md-6 order-md-2">
                 <h2>Faça o login para continuar</h2>
-                <form method="post" id="loginForm" >
+                <form id="loginForm">
+                    <input type="hidden" name="tipo" value="cadastro">
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu email">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu email" required>
                         <label for="email" class="form-label">Digite seu email</label>
+                        <div class="mensagemErro" id="erroEmail" style="color: red;"></div>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" name="senha" id="password" placeholder="Digite sua senha">
-                        <label for="password" class="form-label">Digite sua senha</label>
+                        <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha" required>
+                        <label for="senha" class="form-label">Digite sua senha</label>
                         <span class="toggle-password" onclick="togglePasswordVisibility()">
-                            <i class="fas fa-eye-slash"></i>
+                            <i class="fas fa-eye"></i>
                         </span>
+                        <div class="mensagemErro" id="erroSenha" style="color: red;"></div>
                     </div>
-                    <input type="submit" class="btn btn-primary" value="Entrar" id="">
+                    <span id="mensagemErro" class="text-danger"></span><br>
+                    <input type="button" class="btn btn-primary" style="background-color: #D6E88D; border: transparent;" value="Entrar" onclick="enviarFormulario()">
                 </form>
             </div>
             <div class="col-md-6 order-md-1">
@@ -45,44 +49,54 @@
         </div>
     </div>
 
-
-    <script src="js/login.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        //AJAX
-
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Impede o envio padrão do formulário
-        
-        // Recupera os dados do formulário
-        const formData = new FormData(this);
-
-        // Envia os dados do formulário para o backend via AJAX
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', '../Controller/controllerHome.php'); // URL do script PHP de login
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                // Se a resposta for bem-sucedida, verifica se o login foi bem-sucedido
-                if (xhr.responseText.trim() === 'success') {
-                    // Redireciona para a nova página
-                    window.location.href = '../View/sistema.html'; // Substitua pela URL da nova página
-                } else {
-                    // Se o login falhar, exibe uma mensagem de erro
-                    alert('Login falhou. Por favor, verifique suas credenciais.');
+        function enviarFormulario() {
+            console.log("Enviando formulário...");
+            $.ajax({
+                type: "POST",
+                url: "../Controller/controllerHome.php",
+                data: $("#loginForm").serialize(),
+                success: function(response) {
+                    console.log("Resposta recebida:", response); // Debug: log the response to the console
+                    var resposta = JSON.parse(response);
+                    if (resposta.status === 'login_aceito') {
+                        window.location.href = 'sistema.html';
+                    } else if (resposta.status === 'login_nao_aceito') {
+                        console.log("Login não aceito"); // Debug: log if login is not accepted
+                        // Limpar mensagens de erro anteriores
+                        $(".mensagemErro").text("");
+                        // Exibir mensagem de erro geral
+                        $("#mensagemErro").text("Login não aceito. Tente novamente.").show();
+                        // Exibir mensagens de erro específicas se existirem
+                        if (resposta.erros) {
+                            if (resposta.erros.email) {
+                                $("#erroEmail").text(resposta.erros.email);
+                            }
+                            if (resposta.erros.senha) {
+                                $("#erroSenha").text(resposta.erros.senha);
+                            }
+                        }
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('AJAX Error:', status, error);
                 }
+            });
+        }
+
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('senha');
+            const passwordIcon = document.querySelector('.toggle-password i');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                passwordIcon.classList.remove('fa-eye');
+                passwordIcon.classList.add('fa-eye-slash');
             } else {
-                // Se a requisição falhar, exibe uma mensagem de erro
-                alert('Erro ao enviar solicitação. Por favor, tente novamente mais tarde.');
+                passwordInput.type = 'password';
+                passwordIcon.classList.remove('fa-eye-slash');
+                passwordIcon.classList.add('fa-eye');
             }
-        };
-        xhr.onerror = function() {
-            // Se houver um erro de rede, exibe uma mensagem de erro
-            alert('Erro de rede. Por favor, verifique sua conexão com a internet.');
-        };
-        xhr.send(formData);
-    });
-</script>
-
-
+        }
+    </script>
 </body>
 </html>

@@ -18,7 +18,7 @@ function CriarClinica($nome, $email, $senha)
             $stmt->bindParam(':senha', $senhaCriptografada);
             $stmt->execute();
             SalvarClinicanaSessao($email);
-            echo "clinica criada com sucesso.";
+            //echo "clinica criada com sucesso.";
         } 
         catch (PDOException $e) 
         {
@@ -46,12 +46,14 @@ function Login($email, $senha)
             
             if ($resultado && password_verify($senha, $resultado['Cli_senha'])) 
             {
-                echo "Login realizado com sucesso.";
+                //echo "Login realizado com sucesso.";
                 SalvarClinicanaSessao($email);
+                return true;
             } 
             else 
             {
                 echo "Email ou senha incorretos.";
+                return false;
             }
         } 
         catch (PDOException $e) 
@@ -64,43 +66,7 @@ function Login($email, $senha)
         echo "Falha na conexão com o banco de dados.";
     }
 }
-/*
-function Login($email, $senha) 
-{
-    $conecta = conectarBanco();
-    if ($conecta) 
-    {
-        try 
-        {
-            $texto = "SELECT Cli_senha FROM clinica WHERE Cli_email = :email";
-            $stmt = $conecta->prepare($texto);
-            $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-            $stmt->execute();
-            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
-            
-            if ($resultado && password_verify($senha, $resultado['Cli_senha'])) 
-            {
-                SalvarClinicanaSessao($email);
-                return true; // Login bem-sucedido
-            } 
-            else 
-            {
-                return false; // Email ou senha incorretos
-            }
-        } 
-        catch (PDOException $e) 
-        {
-            error_log("Erro ao realizar login: " . $e->getMessage());
-            return false;
-        }
-    } 
-    else 
-    {
-        error_log("Falha na conexão com o banco de dados.");
-        return false;
-    }
-}
-*/
+
 
 function ConferirEmailBancoDeDados($email)
 {
@@ -113,12 +79,12 @@ function ConferirEmailBancoDeDados($email)
             $consulta->execute();
             if ($consulta->rowCount() > 0) 
             {
-                echo "E-mail encontrado.";
+                //echo "E-mail encontrado.";
                 return true;
             } 
             else
             {
-                echo "E-mail não encontrado.";
+                //echo "E-mail não encontrado.";
                 return false;
             }
         } 
@@ -162,7 +128,7 @@ function SalvarClinicanaSessao($email)
                     $_SESSION['id_clinica'] = $id_clinica;
                     $_SESSION['Cli_nome'] = $cli_nome;
 
-                    echo "ID da Clínica: " . $id_clinica . " - Nome da Clínica: " . $cli_nome . "<br>";
+                    //echo "ID da Clínica: " . $id_clinica . " - Nome da Clínica: " . $cli_nome . "<br>";
                 }
             } else {
                 echo "Nenhuma clínica encontrada com este email.";

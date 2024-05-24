@@ -3,62 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Cadastro</title>
     <link rel="icon" href="img/logo-png.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="css/style3.css">
-        
+    <link rel="stylesheet" href="css/style3.css">
 </head>
 <body>
     <div class="container col-11 col-md-9" id="form-container">
-            <div class="logo">
-              <img src="img/logo-nome.png" alt="logo">
-            </div>
+        <div class="logo">
+            <img src="img/logo-nome.png" alt="logo">
+        </div>
         <div class="row gx-5">
             <div class="col-md-6">
                 <h2>Realize seu cadastro</h2>
-                <form action="" method="post" id="formCadastro">
+                <form id="formCadastro">
                     <div class="form-floating md-3">
-                    <input type="text" class="form-control" id="nomeCadastro" name="nome"  placeholder="Digite seu nome">
-                    <label for="nomeCadastro" class="form-label">Digite o seu nome</label>
+                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
+                        <label for="name" class="form-label">Digite o seu nome</label>
+                        <div class="mensagemErro" id="erroNome" style="color: red;"></div>
                     </div>
 
                     <div class="form-floating md-3">
-                    <input type="email" class="form-control" id="email" name="email"  placeholder="Digite seu email">
-                    <label for="email" class="form-label">Digite o seu email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email">
+                        <label for="email" class="form-label">Digite o seu email</label>
+                        <div class="mensagemErro" id="erroEmail" style="color: red;"></div>
                     </div>
 
                     <div class="form-floating md-3">
-                    <input type="password" class="form-control" id="senha" name="senha"  placeholder="Digite seu email">
-                    <label for="senha" class="form-label">Digite a sua senha</label>
+                        <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha">
+                        <label for="password" class="form-label">Digite a sua senha</label>
+                        <div class="mensagemErro" id="erroSenha" style="color: red;"></div>
                     </div>
 
                     <div class="form-floating md-3">
-                    <input type="password" class="form-control" id="confirmarSenhaCadastro" name="senhaRepetida"  placeholder="Digite seu email">
-                    <label for="confirmarSenhaCadastro" class="form-label">Confime sua senha</label>
+                        <input type="password" class="form-control" id="senhaRepetida" name="senhaRepetida" placeholder="Confirme sua senha">
+                        <label for="senhaRepetida" class="form-label">Confirme sua senha</label>
+                        <div class="mensagemErro" id="erroSenhaRepetida" style="color: red;"></div>
                     </div>
                     <div class="mb-3">
                         <div class="form-check mb-2">
                             <input type="checkbox" class="form-check-input" value="" id="agree-form" name="agree-form">
-                            <label for="agree-form" class="form-check-label" >Você aceita os <a href="#">termos de serviços?</a></label>
+                            <label for="agree-form" class="form-check-label">Você aceita os <a href="#">termos de serviços?</a></label>
                         </div>
                         <div class="form-check mb-2">
                             <input type="checkbox" class="form-check-input" value="" id="newsletter" name="newsletter">
-                            <label for="agree-form" class="form-check-label" >Você deseja recebers as nossas Newsletter?</label>
-                           
+                            <label for="newsletter" class="form-check-label">Você deseja receber as nossas Newsletter?</label>
                         </div>
                         <br>
-                        <input type="submit" class="btn btn-primary" id="submit" value="cadastrar">
+                        <input type="button" class="btn btn-primary" style="background-color: #D6E88D; border: transparent;" value="Cadastrar" onclick="enviarFormulario()">
                     </div>
-                        
                 </form>
-                <div class="mensagemErro" id="message"></div>
             </div>
             <div class="col-md-6">
-                <div class="row aling-itens-center">
+                <div class="row align-items-center">
                     <div class="col-12">
                         <img src="img/Prototipo.png" alt="Tela registro" class="img-fluid">
                     </div>
@@ -69,41 +68,46 @@
             </div>
         </div>
     </div>
-
     <script src="js/app2.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function(){
-            $("#submit").click(function(){
-                let nome = $("#nomeCadastro").val();
-                let email = $("#email").val();
-                let senha = $("#senha").val();
-                let senhaRepetida = $("#confirmarSenhaCadastro").val();
-        
-                $.ajax({
-                    url: "../Model/modelHome.php", // coloque aqui o caminho do seu arquivo que processa o formulário
-                    type: "POST",
-                    data: {
-                        nome: nome,
-                        email: email,
-                        senha: senha,
-                        senhaRepetida: senhaRepetida,  
-                    },
-                    success: function(response){
-                        // Aqui você pode lidar com a resposta do servidor, por exemplo, exibir uma mensagem de sucesso.
-                        alert("Formulário enviado com sucesso!");
-                        window.location.href = 'login.html';
-                    },
-                    error: function(){
-                        // Se ocorrer algum erro durante a requisição AJAX, você pode lidar com ele aqui.
-                        alert("Ocorreu um erro ao enviar o formulário.");
+        function enviarFormulario() {
+            console.log("Enviando formulário...");
+            $.ajax({
+                type: "POST",
+                url: "../Controller/controllerHomec.php",
+                data: $("#formCadastro").serialize(),
+                success: function(response) {
+                    console.log("Resposta recebida:", response); // Debug: log the response to the console
+                    var resposta = JSON.parse(response);
+                    if (resposta.status === 'cadastro_aceito') {
+                        window.location.href = 'sistema.html';
+                    } else if (resposta.status === 'erro') {
+                        console.log("Erros no formulário"); // Debug: log if there are form errors
+                        var erros = resposta.erros;
+
+                        // Limpar mensagens de erro anteriores
+                        $(".mensagemErro").text("");
+
+                        // Exibir mensagens de erro específicas
+                        if (erros.nome) {
+                            $("#erroNome").text(erros.nome);
+                        }
+                        if (erros.email) {
+                            $("#erroEmail").text(erros.email);
+                        }
+                        if (erros.senha) {
+                            $("#erroSenha").text(erros.senha);
+                        }
+                        if (erros.senhaRepetida) {
+                            $("#erroSenhaRepetida").text(erros.senhaRepetida);
+                        }
                     }
-                });
+                },
+                error: function(xhr, status, error) {
+                    console.error('AJAX Error:', status, error);
+                }
             });
-        });
-        </script>
-
-
-
+        }
+    </script>
 </body>
 </html>
