@@ -269,6 +269,19 @@ input{
     .clicked {
         color: #64B68B; /* Altere para a cor que você deseja */
     }
+    .icon i {
+        cursor: pointer;
+        color: #666666;
+    }
+    
+    .default i {
+        color: #64B68B;
+    }
+    
+    .clicked i {
+        color: #64B68B;
+    }
+    
     
     
     
