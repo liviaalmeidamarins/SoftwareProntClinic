@@ -35,5 +35,25 @@ function mostrarAsQuestoes() {
     });
   }
   
-  
+  // icons
+
+  function clearClickedClass() {
+    const icons = document.querySelectorAll('i');
+    icons.forEach(icon => icon.classList.remove('clicked'));
+}
+
+document.getElementById('openModalBtn').addEventListener('click', function() {
+    clearClickedClass();
+    this.querySelector('i').classList.add('clicked');
+});
+
+document.getElementById('modal3').addEventListener('click', function() {
+    clearClickedClass();
+    this.querySelector('i').classList.add('clicked');
+});
+
+document.getElementById('homeIcon').addEventListener('click', function() {
+    clearClickedClass();
+    this.querySelector('i').classList.add('clicked');
+});
 
