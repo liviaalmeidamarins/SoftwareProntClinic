@@ -42,7 +42,7 @@ li {
 
 .aa img{
     justify-content: center;
-    width: 80px;
+    width: 60px;
     height: auto;
    
 }
@@ -152,7 +152,8 @@ input{
     }
 
     .icon{
-        font-size: 26px;
+        font-size: 22px;
+        
         cursor: pointer;
     }
 
@@ -162,7 +163,7 @@ input{
         align-items: center;
     }
     #openModalBtn{
-        font-size: 26px;
+        font-size: 22px;
     }
     .pesquisa{
         width: 25%;
@@ -263,7 +264,26 @@ input{
         border: 1px solid transparent;
         cursor: pointer;
         margin-right: 5px;
+     }
+    /*Icons mudando de cor*/
+    .clicked {
+        color: #64B68B; /* Altere para a cor que você deseja */
     }
+    .icon i {
+        cursor: pointer;
+        color: #666666;
+    }
+    
+    .default i {
+        color: #64B68B;
+    }
+    
+    .clicked i {
+        color: #64B68B;
+    }
+    
+    
+    
     
     
    
