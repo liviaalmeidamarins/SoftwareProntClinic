@@ -1,23 +1,69 @@
 <?php
 
-
 require_once '../Model/modelSistema.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cfp'])) 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') 
 {
-    // Recebendo os dados do formulário
-    $cpf = $_POST['cfp'];
+    $tipo = $_POST['tipo'];
 
-    // Verificando se o CPF tem exatos 11 dígitos (somente números) e se o nome não é nulo e menor que 255 caracteres
-    if (preg_match('/^\d{11}$/', $cpf))
+    if($tipo === 'CPF_Modal') 
     {
-        criarPaciente($cpf);
-        echo "CPF válido. Processamento concluído.";
-    } 
-    else 
+        $cpf = $_POST['cpf'];
+
+        error_log("cpf: " . $cpf);
+    
+        $cpf = preg_replace('/\D/', '', $cpf);
+    
+    
+        if (preg_match('/^\d{11}$/', $cpf)) 
+        {
+            if (conferirExistenciaPaciente($cpf)) 
+            {
+                echo json_encode(["status" => "CPF_existente"]);
+                exit;
+            } 
+            else 
+            {
+                echo json_encode(["status" => "CPF_nao_encontrado"]);
+                exit;
+            }
+        } 
+        else 
+        {
+            echo json_encode(["status" => "CPF_invalido"]);
+        }
+        exit;
+    }
+    else if($tipo === 'Cadastro') 
     {
-        // Resposta de exemplo para o AJAX
-        echo "CPF inválido ou nome vazio ou maior que 255 caracteres.";
+        $cpf = $_POST['cpf-cadastro'];
+        $nome = $_POST['nome'];
+        $telefone = $_POST['telefone'];
+        $email = $_POST['email'];
+        $convenio = $_POST['convenio'];
+        $dataNascimento = $_POST['dataNascimento'];
+
+        if (!empty($nome)) 
+        {
+
+            if(strlen($nome) < 255)
+            {
+                criarPaciente($cpf, $nome, $telefone, $email, $convenio, $dataNascimento);
+                echo json_encode(["status" => "Cadastro_feito"]);
+                exit;
+            }
+            else
+            {
+                echo json_encode(["status" => "Nome_grande"]);
+                exit;
+            }
+        }
+        else
+        {
+            echo json_encode(["status" => "Nome_vazio"]);
+            exit;
+        }
+
     }
 }
 
